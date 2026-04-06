@@ -48,7 +48,7 @@ namespace wprawka_01.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    DataZgonu = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataZgonu = table.Column<DateTime>(type: "datetime2", nullable: true),
                     KlientId = table.Column<int>(type: "int", nullable: false),
                     PlacowkaId = table.Column<int>(type: "int", nullable: true),
                     Imie = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),

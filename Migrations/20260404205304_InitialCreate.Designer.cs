@@ -32,7 +32,7 @@ namespace wprawka_01.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<DateTime>("DataZgonu")
+                    b.Property<DateTime?>("DataZgonu")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Imie")

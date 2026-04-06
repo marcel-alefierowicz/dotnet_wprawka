@@ -24,7 +24,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="DataZgonu" class="control-label"></label>
-                <input asp-for="DataZgonu" class="form-control" />
+                <input asp-for="DataZgonu" type="date" class="form-control" />
                 <span asp-validation-for="DataZgonu" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -36,7 +36,10 @@
             </div>
             <div class="form-group">
                 <label class="control-label">Placowka</label>
-                <select asp-for="PlacowkaId" class ="form-control" asp-items="ViewBag.PlacowkaId"></select>
+                <select asp-for="PlacowkaId" class ="form-control" asp-items="ViewBag.PlacowkaId">
+                    <option value="">-- brak placowki --</option>
+                </select>
+                <span asp-validation-for="PlacowkaId" class="text-danger"></span>
             </div>
             
             <div class="form-group">

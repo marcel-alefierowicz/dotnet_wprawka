@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 
 namespace wprawka_01.Models
 {
@@ -7,10 +8,16 @@ namespace wprawka_01.Models
         [Required]
         public DateTime DataZgonu { get; set; }
 
+        [Required]
         public int KlientId { get; set; }
-        public Klient Klient { get; set; } = null!;
 
-        public int? PlacowkaId { get; set; }
-        public Placowka? AktualnaPlacowka { get; set; }
+        [ValidateNever]
+        public Klient Klient { get; set; }
+
+        [Required]
+        public int PlacowkaId { get; set; }
+
+        [ValidateNever]
+        public Placowka AktualnaPlacowka { get; set; }
     }
 }

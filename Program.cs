@@ -27,6 +27,21 @@ app.UseAuthorization();
 app.MapStaticAssets();
 
 app.MapControllerRoute(
+    name: "klienci",
+    pattern: "klienci/{action=Index}/{id?}",
+    defaults: new { controller = "Klient" });
+
+app.MapControllerRoute(
+    name: "denaci",
+    pattern: "denaci/{action=Index}/{id?}",
+    defaults: new { controller = "Denat" });
+
+app.MapControllerRoute(
+    name: "placowki",
+    pattern: "placowki/{action=Index}/{id?}",
+    defaults: new { controller = "Placowka" });
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();

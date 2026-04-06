@@ -76,8 +76,8 @@ namespace wprawka_01.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("NumerTel")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)");
+                        .HasMaxLength(12)
+                        .HasColumnType("nvarchar(12)");
 
                     b.HasKey("ID");
 
@@ -121,7 +121,7 @@ namespace wprawka_01.Migrations
                     b.HasOne("wprawka_01.Models.Klient", "Klient")
                         .WithMany("Denaci")
                         .HasForeignKey("KlientId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("wprawka_01.Models.Placowka", "AktualnaPlacowka")

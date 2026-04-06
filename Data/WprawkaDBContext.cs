@@ -18,7 +18,7 @@ public class WprawkaDBContext : DbContext
             .HasOne(d => d.Klient)
             .WithMany(k => k.Denaci)
             .HasForeignKey(d => d.KlientId)
-            .OnDelete(DeleteBehavior.Restrict); // nie mozemy odpalic klienta jesli dalej ma denatow przypisanych
+            .OnDelete(DeleteBehavior.Cascade); // nie mozemy odpalic klienta jesli dalej ma denatow przypisanych
 
         modelBuilder.Entity<Denat>()
             .HasOne(d => d.AktualnaPlacowka)

@@ -50,7 +50,7 @@ namespace wprawka_01.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DataZgonu = table.Column<DateTime>(type: "datetime2", nullable: false),
                     KlientId = table.Column<int>(type: "int", nullable: false),
-                    PlacowkaId = table.Column<int>(type: "int", nullable: true),
+                    PlacowkaId = table.Column<int>(type: "int", nullable: false),
                     Imie = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     Nazwisko = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },

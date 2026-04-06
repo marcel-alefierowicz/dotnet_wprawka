@@ -5,7 +5,6 @@ namespace wprawka_01.Models
 {
     public class Denat : Osoba
     {
-        [Required]
         public DateTime DataZgonu { get; set; }
 
         [Required]
@@ -14,7 +13,6 @@ namespace wprawka_01.Models
         [ValidateNever]
         public Klient Klient { get; set; }
 
-        [Required]
         public int PlacowkaId { get; set; }
 
         [ValidateNever]

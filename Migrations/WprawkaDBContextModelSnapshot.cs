@@ -45,7 +45,7 @@ namespace wprawka_01.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int?>("PlacowkaId")
+                    b.Property<int>("PlacowkaId")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
@@ -127,7 +127,8 @@ namespace wprawka_01.Migrations
                     b.HasOne("wprawka_01.Models.Placowka", "AktualnaPlacowka")
                         .WithMany("Denaci")
                         .HasForeignKey("PlacowkaId")
-                        .OnDelete(DeleteBehavior.SetNull);
+                        .OnDelete(DeleteBehavior.SetNull)
+                        .IsRequired();
 
                     b.Navigation("AktualnaPlacowka");
 

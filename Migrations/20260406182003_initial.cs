@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace wprawka_01.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -48,9 +48,9 @@ namespace wprawka_01.Migrations
                 {
                     ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    DataZgonu = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataZgonu = table.Column<DateTime>(type: "datetime2", nullable: true),
                     KlientId = table.Column<int>(type: "int", nullable: false),
-                    PlacowkaId = table.Column<int>(type: "int", nullable: false),
+                    PlacowkaId = table.Column<int>(type: "int", nullable: true),
                     Imie = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     Nazwisko = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },

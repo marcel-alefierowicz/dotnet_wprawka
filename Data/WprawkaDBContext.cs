@@ -24,6 +24,6 @@ public class WprawkaDBContext : DbContext
             .HasOne(d => d.AktualnaPlacowka)
             .WithMany(p => p.Denaci)
             .HasForeignKey(d => d.PlacowkaId)
-            .OnDelete(DeleteBehavior.SetNull); // w przypadku usuniecia placowki, denatowi przypisujemy null
+            .OnDelete(DeleteBehavior.SetNull); // po usunieciu placowki, denat moze miec brak aktualnej placowki
     }
 }

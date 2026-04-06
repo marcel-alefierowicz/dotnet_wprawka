@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace wprawka_01.Migrations
 {
     [DbContext(typeof(WprawkaDBContext))]
-    [Migration("20260406181058_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20260406182003_initial")]
+    partial class initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,7 +32,7 @@ namespace wprawka_01.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
-                    b.Property<DateTime>("DataZgonu")
+                    b.Property<DateTime?>("DataZgonu")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Imie")
@@ -48,7 +48,7 @@ namespace wprawka_01.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("PlacowkaId")
+                    b.Property<int?>("PlacowkaId")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
@@ -130,8 +130,7 @@ namespace wprawka_01.Migrations
                     b.HasOne("wprawka_01.Models.Placowka", "AktualnaPlacowka")
                         .WithMany("Denaci")
                         .HasForeignKey("PlacowkaId")
-                        .OnDelete(DeleteBehavior.SetNull)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("AktualnaPlacowka");
 
